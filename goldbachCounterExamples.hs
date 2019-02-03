@@ -14,10 +14,11 @@ primes = 2 : [n | n <- oddsFrom3, null (smallPrimeDivisors n)]
 -- Every odd composite number can be expressed as the sum of a prime and
 -- twice a square. E.g., 35 = 17 + 2*(3^2); 99 = 67 + 2*(4^2). (Disproved. It is not true for 5777 or 5993.
 
--- function for determining a squar
+-- function for getting a square root
 iSqrt :: (Integral a, Integral b) => a -> b
 iSqrt n = round (sqrt (fromIntegral n))
 
+-- function for getting whether an Integral is a square
 isASquare :: (Integral a) => a -> Bool
 isASquare n = (iSqrt n) ^ 2 == n
 
